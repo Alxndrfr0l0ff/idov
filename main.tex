@@ -1,0 +1,169 @@
+\documentclass[a4paper,14pt]{article}
+\fontfamily{Times New Roman}
+%%% Работа с русским языком
+% кодировка исходного текста
+%\usepackage{l3backend}
+%\usepackage{fontspec}{Times New Roman}
+
+\usepackage{cmap}					% поиск в PDF
+\usepackage[T2A]{fontenc}			% кодировка
+\usepackage[utf8]{inputenc}			% кодировка исходного текста
+\usepackage[english,russian]{babel}	% локализация и переносы
+\usepackage[obeyspaces]{url}
+\usepackage{graphicx} % Required for including pictures
+\usepackage{microtype} % Improves typography
+\usepackage[14pt]{extsizes}
+\usepackage{multirow}
+\usepackage{lscape}
+%\usepackage{mathptmx}
+%\userpackage{mathptmx}
+%\userpackage{times}
+%\usepackage[absolute]{textpos}
+
+%%% Работа с русским языком
+\usepackage{indentfirst}			% красная черта в первом абзаце
+\frenchspacing
+
+
+%% Свои команды
+\newcommand{\mysection}[1]{\section*{#1} \addcontentsline{toc}{subsection}{#1}}
+\newcommand{\mysubsection}[1]{\subsection*{#1} \addcontentsline{toc}{subsubsection}{#1}}
+
+
+%%% Страница
+\usepackage{geometry} % Простой способ задавать поля
+\geometry{top=15mm}
+\geometry{bottom=25mm}
+\geometry{left=30mm}
+\geometry{right=15mm}
+
+\usepackage{setspace} % Интерлиньяж
+%\onehalfspacing % Интерлиньяж 1.5
+%\doublespacing % Интерлиньяж 2
+\singlespacing % Интерлиньяж 1
+
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}}
+
+\begin{document} % конец преамбулы, начало документа
+	
+	\begin{minipage}{0.45\textwidth}
+	\includegraphics[scale=0.15]{Logo_DPSMain.png} 
+	\end{minipage}
+\hfill
+\hfill
+	\begin{minipage}{0.45\textwidth}
+		\begin{center}
+	Управління по роботі з податковим боргом ГУ ДПС в Івано-Франківській області
+		\end{center}
+   \end{minipage}
+
+\bigskip
+
+\hrule height 2pt\smallskip
+\hrule height 0.5pt%
+	
+\begin{center}
+
+	
+\textbf{«Основні показники роботи за напрямком\\ «\underline{Скорочення податкового боргу}» в 2023-2024 роках»}\\
+\bigskip
+\textbf{Динаміка податкового боргу та заборгованості по ЄВ }\\
+\bigskip
+\begin{tabular}{||p{3cm}||p{4cm}||p{4cm}||p{4cm}||}
+	\hline 	\hline  
+	Період & на 01 січня 2023 & на 01 січня 2024 & на 01 лютого 2024 \\ 
+	\hline \hline 
+	Борг до ЗБ & 2949,3 млн.грн. & 2087,2 млн.грн. & 1877,6 млн. грн. \\ 
+	\hline 
+	Динаміка ЗБ, +;- &  & -862,1 млн. грн. до попереднього періоду (до п.р.) & -209,6 млн. грн. до п.р. \\ 
+	
+	\hline \hline
+	Заборгованість ЄВ & 209,3 млн.грн. &221,9 млн.грн. & 164,9 млн. грн. \\ 
+	\hline
+	Динаміка ЄВ, +;- &  & +12,6 млн. грн. до п.р. & -57 млн. грн. до п.р. \\ 
+	\hline \hline
+\end{tabular} 
+\textbf{Динаміка кількості боржників }\\
+\bigskip
+\begin{tabular}{||p{3cm}||p{4cm}||p{4cm}||p{4cm}||}
+	\hline 	\hline  
+	Період & на 01 січня 2023 & на 01 січня 2024 & на 01 лютого 2024 \\ 
+	\hline \hline 
+	Кількість боржників (юо та фо) & 199159 & 239347 & 243622 \\ 
+	\hline 
+	Динаміка клк., +;- &  & +40188 до попереднього періоду (до п.р.) & +4275 до п.р. \\ 
+	
+	\hline \hline
+	Клк. боржників ЄВ & 9878 &8163 & 7833 \\ 
+	\hline
+	Динаміка ЄВ, +;- &  & -1715 до п.р. & -330 до п.р. \\ 
+	\hline \hline
+	
+\end{tabular} 
+	\textbf{Виконання показників доходів в 2023 році, млн.грн. }\\
+	\bigskip
+	\begin{tabular}{||p{6cm}||p{2cm}||p{2cm}||p{2cm}||p{2cm}||}
+		\hline 	\hline  
+		Показник & План & Факт & +;- & відс. \\ 
+		\hline \hline 
+		Надходження до ДБ & 80,0 & 225 & +145 & 281,2 \\ 
+		\hline 
+		Надходження ЄСВ & 28,4 & 49,0 & +20,6 & 172,7\\ 
+		
+		\hline
+		Надх. за рахунок реалізації майна, тис. грн. & 2430 & 785 &  -1645 & 32,3\\ 
+		\hline
+		Надходження безхоз (ДБ), тис.грн.& 99  & 182,4 & +83,4 & 184,3\\ 
+		\hline
+		Надходження безхоз (МБ), тис.грн.& 107 & 845,6 & +738,6 & 790,3\\ 
+		\hline \hline
+		
+	\end{tabular} \\
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\textbf{Виконання показників доходів в січні 2024 року, млн.грн. }
+
+\begin{tabular}{||p{6cm}||p{2cm}||p{2cm}||p{2cm}||p{2cm}||}
+	\hline 	\hline  
+	Показник & План & Факт & +;- & відс. \\ 
+	\hline \hline 
+	Надходження до ДБ & 4,2 & 4,3 & +0,1 & 102,5 \\ 
+	\hline 
+	Надходження ЄСВ & 2,1 & 2,3 & +0,2 & 110,5\\ 
+	
+	\hline 
+	Надх. за рахунок реалізації майна, тис.грн. & 30 & 0& -30 & 0\\ 
+	\hline
+	Надходження безхоз (ДБ), тис.грн.& 12 & 6,8 & -5,2 & 57\\ 
+	\hline
+	Надходження безхоз (МБ), тис.грн.& 8 & 3,3 & -4,7 & 41,5\\ 
+	\hline \hline
+	
+\end{tabular} 
+
+\textbf{Виконання показників доходів в лютому 2024 року (дані на 20.02), млн.грн. }
+
+\begin{tabular}{||p{6cm}||p{2cm}||p{2cm}||p{2cm}||p{2cm}||}
+	\hline 	\hline  
+	Показник & План & Факт & +;- & відс. \\ 
+	\hline \hline 
+	Надходження до ДБ & 3,8 & 1,4 & -2,4 & 35,6 \\ 
+	\hline 
+	Надходження ЄСВ & 2,2 & 1,5 & -0,7 & 69,6\\ 	
+	\hline
+	Надходження безхоз (ДБ), тис.грн.& 15 & 1 & -14 & 6,5\\ 
+	\hline
+	Надходження безхоз (МБ), тис.грн.& 7 & 1 & -6 & 14,1\\ 
+	\hline \hline
+	
+\end{tabular} 
+\end{center}
+
+
+	
+	
+	
+\end{document}

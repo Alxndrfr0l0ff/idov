@@ -1,0 +1,90 @@
+\documentclass[tikz]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,positioning,shadows,trees}
+%\usepackage{lscape} 
+%%% Работа с русским языком
+\usepackage{cmap}					% поиск в PDF
+\usepackage{mathtext} 				% русские буквы в формулах
+\usepackage[T2A]{fontenc}			% кодировка
+\usepackage[utf8]{inputenc}			% кодировка исходного текста
+\usepackage[english,russian]{babel}	% локализация и переносы
+\usepackage{indentfirst}			% красная черта в первом абзаце
+\frenchspacing
+\hfuzz=120pt
+
+\tikzset{
+	basic/.style  = {draw, text width=12cm, drop shadow, font=\sffamily, rectangle},
+	root/.style   = {basic, rounded corners=2pt, thin, align=center,
+		fill=white!20},
+	level 2/.style = {basic,  text width=7cm, rounded corners=4pt, thin,align=center, fill=green!60,
+		text width=13em},
+	level 3/.style = {basic, thin, align=left, fill=pink!60, text width=9.0em},
+    level 4/.style = {basic, thin, align=left, fill=blue!60, text width=9.0em},
+     level 5/.style = {basic, thin, align=left, fill=orange!60, text width=10.0em}
+}
+
+\begin{document}
+
+	\begin{tikzpicture}[
+level 1/.style={sibling distance=60mm},
+edge from parent/.style={->,draw},
+>=latex]
+
+% root of the the initial tree, level 1
+\node[root] (c0) at (0,5) {{\footnotesize Заборгованість по ЄСВ} 
+{\footnotesize за станом на 01.02.24 - \textbf{164,9~млн.~грн.}}\\
+{\footnotesize кількість боржників - \textbf{7833}}}
+% The first level, as children of the initial tree
+child {node[level 2] (c1) {{\footnotesize Заборгованість юридичних осіб -
+\textbf{61,2~млн.~грн.} по \textbf{1095} боржниках, з них:}}}
+%child {node[level 2] (c2) {{\footnotesize Борг фіз осіб із сумою більше 3060 грн. %\textbf{230,3~млн.~грн.} по \textbf{10636} боржниках}}}
+child {node[level 2] (c3) {{\footnotesize Заборгованість фізичних осіб - \textbf{98,3~млн.~грн.} по \textbf{6739} боржниках, з них:}}};
+
+% The second level, relatively positioned nodes
+\begin{scope}[every node/.style={level 3}]
+\node [below=0.5cm of c1, xshift=0pt] (c11) {{\footnotesize погашено заборгованість \textbf{54 тис. грн.} по 15 боржниках (станом на 21.02)}};
+\node [below=0.25cm of c11] (c12) {{\footnotesize борг банкрутів - \textbf{6919 тис.грн.} по 21 боржниках}};
+\node [below=0.25cm of c12] (c13) {{\footnotesize борг бюджетних установ - \textbf{6978,3 тис.грн.} по 33 боржниках, в т.ч. 2 економічно-активних боржника із сумою боргу 135,8 тис.грн.}};
+\node [below=0.25cm of c13] (c14) {{\footnotesize борг державних підприємств - \textbf{15417,3 тис.грн.} по 21 боржниках}};
+\node [below=0.25cm of c14] (c15) {{\footnotesize борг комунальних підприємств - \textbf{5572,1 тис.грн.} по 36 боржниках}};
+\node [below=0.25cm of c15] (c16) {{\footnotesize борг юридичних осіб (не банкрути, бюджетні, комунальні,
+державні) -  \textbf{31571,2 тис.грн.} по 950 боржниках}};
+
+\node [below=0.5cm of c3, xshift=0pt] (c21) {{\footnotesize погашено заборгованість \textbf{857,5 тис. грн.} по 146 боржниках (станом на 21.02)}};
+\node [below=0.5cm of c21, xshift=0pt] (c22) {{\footnotesize борг банкрутів - \textbf{5 тис.грн.} по 2 боржниках}};
+\node [below=0.5cm of c22, xshift=0pt] (c23) {{\footnotesize борг фізичних осіб із станами 11,12 - \textbf{31023 тис.грн.} по 3895 боржниках}};
+\node [below=0.5cm of c23, xshift=0pt] (c24) {{\footnotesize борг фізичних осіб із станом 0 - \textbf{61741,9 тис. грн.} по 2525 боржниках, в т.ч. 878 економічно - активних боржників із сумою боргу 13214,9 тис.грн.}};
+\node [below=0.5cm of c24, xshift=0pt] (c25) {{\footnotesize борг фізичних осіб із станами іншими, ніж 0,11,12 - \textbf{4699 тис. грн.} по 171 боржнику, в т.ч. 30 економічно - активних боржників із сумою боргу 737,4 тис.грн.}};
+
+%\node [below=0.5cm of c2, xshift=15pt] (c21) {{\footnotesize Описано майно по 213 боржниках - %фо за даними реєструючих органів на суму 0 грн.}};
+\end{scope}
+
+\begin{scope}[every node/.style={level 4}]
+\node [below=1.2cm of c16, xshift=0pt] (c17) {{\footnotesize 83 економічно - активних боржників із сумою боргу \textbf{17521,1
+тис.грн.}}};
+\node [right=0.5cm of c17, xshift=0pt] (c18) {{\footnotesize 758 боржників із відсутніми ознаками економічної активності
+на суму боргу \textbf{13936 тис.грн.}}};
+\end{scope}
+
+\begin{scope}[every node/.style={level 5}]
+\node [below=0.5cm of c18, xshift=0pt] (c51) {{\footnotesize ВСЬОГО економічно-активних боржників - 993 із сумою заборгованості \textbf{31609,2 тис.грн.}}};
+\end{scope}
+
+% lines from each level 1 node to every one of its "children"
+\foreach \value in {1,2,3,4,5,6}
+\draw[->] (c1.180) |- (c1\value.west);
+
+
+
+\draw[-stealth,shorten >=2pt] (c16.south) -> (c17.north);
+\draw[-stealth,shorten >=2pt] (c16.east) -> (c18.north);
+
+\draw [->] (c3.west) -| ++(-0cm,-2.05cm) -> (c21.west);
+\draw [->] (c3.west) -| ++(-0cm,-4.09cm) -> (c22.west);
+\draw [->] (c3.west) -| ++(-0cm,-6.09cm) -> (c23.west);
+\draw [->] (c3.west) -| ++(-0cm,-9.0cm) -> (c24.west);
+\draw [->] (c3.west) -| ++(-0cm,-12.75cm) -> (c25.west);
+\end{tikzpicture}
+
+
+\end{document}\grid
